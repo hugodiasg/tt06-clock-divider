@@ -20,7 +20,7 @@ wire clk_out;
 assign uo_out[0] = clk_out;
   
 // reset
-assign nrst = n_rst;
+assign nrst = rst_n;
   
 // inputs and clock
 assign scale[7:0] = ui_in[7:0];
