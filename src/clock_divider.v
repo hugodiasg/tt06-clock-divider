@@ -1,4 +1,4 @@
-module tt_um_clock_divider
+module clock_divider
   // Parameters section
   #(parameter WIDTH = 8)
 (
