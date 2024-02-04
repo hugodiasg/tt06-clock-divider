@@ -16,7 +16,7 @@ module clock_divider
   initial begin
       signal_clk_out = 0 ;
       count = 0 ;   
-      scale_reg [WIDTH-1:0] = scale ;
+      scale_reg [WIDTH-1:0] = 0 ;
       signal_clk_out = 0 ;
   end
 
