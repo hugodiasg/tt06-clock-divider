@@ -9,23 +9,6 @@ module tt_um_hugodg_clock_divider (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-// Ports section
-reg clk_in;
-reg nrst;
-wire [7:0] scale;
-wire clk_out; 
-
-// Assign inputs, outputs, bidirectional
-// dedicated outputs
-assign uo_out[0] = clk_out;
-  
-// reset
-assign nrst = rst_n;
-  
-// inputs and clock
-assign scale[7:0] = ui_in[7:0];
-assign clk_in = clk;
-
 // unused ports
 assign uio_out[7] = 0;  /* uio[7]: unused port grounded */
 assign uio_oe[7] = 8'b0;  /* uio[7]: unused port set */
@@ -33,8 +16,8 @@ assign uo_out[7:1] = 0;  /* uo[7]: unused port grounded */
     
 clock_divider clock_divider_inst(
     .clk_in(clk),
-    .nrst(nrst),
+    .nrst(rst_n),
     .scale(ui_in[7:0]),
-    .clk_out(clk_out)
+    .clk_out(uo_out[0])
   );
 endmodule
