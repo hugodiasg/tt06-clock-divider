@@ -8,7 +8,7 @@ module clock_divider
   output clk_out 
 );
   integer count ; // counter
-  integer CONST = 2 ;// 200000 ; // CONSTANT to multiply the 'scale'
+  parameter CONST = 2 ;// 200000 ; // CONSTANT to multiply the 'scale'
   reg  [WIDTH-1:0] scale_reg ; // register to save the scale_reg when reset is triggered
   reg  [15:0] true_scale ; // the 'true' scale defined as 'scale_reg * CONST'
   reg signal_clk_out ; // register to save the clk_out and send it to this port
