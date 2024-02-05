@@ -10,9 +10,9 @@ module tt_um_hugodg_clock_divider (
 );
 
 // unused ports
-    assign uio_out[7] = 0;  // uio[7]: unused port grounded 
-    assign uio_oe[7:0] = 8'b0;  // uio[7]: unused port set 
-    assign uo_out[7:1] = 0;  // uo[7]: unused port grounded
+    assign uio_out[7:0] = 0; 
+    assign uio_oe[7:0] = 8'b0;   
+    assign uo_out[7:1] = 0;  
     
 clock_divider clock_divider_inst(
     .clk_in(clk),
