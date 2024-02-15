@@ -23,7 +23,7 @@ async def test_adder(dut):
   dut.rst_n.value = 1
 
   # X -> Set the input values, wait one clock cycle, and check the output
-  # Set the input values, wait 200_000 clock cycles, and check the output
+  # Set the input values, wait (200_000 * dut.ui_in.value) clock cycles, and check the output
   dut._log.info("Test")
   #dut.ui_in.value = 20
   dut.ui_in.value = 1
@@ -33,5 +33,5 @@ async def test_adder(dut):
   await ClockCycles(dut.clk, 200000)
 
   #assert dut.uo_out.value == 50
-  #assert dut.uo_out.value == "00000000"
-  assert dut.ui_in.value == dut.ui_in.value
+  assert dut.uo_out.value == "00000001"
+
