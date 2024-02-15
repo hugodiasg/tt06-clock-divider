@@ -28,10 +28,7 @@ async def test_adder(dut):
   # Set the input values, wait (200_000 * dut.ui_in.value) clock cycles, and check the output
   dut._log.info("Test")
 
-  # THIS PART WAS RUNNED WITH CONST = 200 ON clock_divider.v JUST TO NOT CONSUMING A LOT OF SIMULATION TIME
-  # IF IT WORKS WELL, THIS LOOP SHOULD BE COMMENTED
-  # JUST LEFTING A "ALWAYS TRUE assert" below to pass throught the Gds Github Actions   
-  # LOOP 
+  # While to check if the clock is being divided
   CONST = 200000
   cycles = 0
   while True:
@@ -41,10 +38,5 @@ async def test_adder(dut):
     cycles += 1
   print(f"took {cycles} cycles")
   assert cycles == CONST/2
- 
-  '''
-  # ALWAYS TRUE assert
-  await ClockCycles(dut.clk, 1)
-  assert dut.ui_in.value == dut.ui_in.value
-  '''
+
 
