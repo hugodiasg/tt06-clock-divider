@@ -8,7 +8,8 @@ module clock_divider
   output clk_out 
 );
   integer count ; // counter
-  integer CONST = 200 ;// 2 ; // CONSTANT to multiply the 'scale'
+  // LET CONST = 200 and uncomment the loop inside the test/test.py if it will be runned 
+  integer CONST = 200000 ;// 2 ; // CONSTANT to multiply the 'scale'
   //reg  [WIDTH-1:0] scale_reg ; // register to save the scale_reg when reset is triggered
   reg  [31:0] true_scale ; // the 'true' scale defined as 'scale_reg * CONST'
   reg signal_clk_out ; // register to save the clk_out and send it to this port
