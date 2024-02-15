@@ -35,7 +35,7 @@ async def test_adder(dut):
   #await ClockCycles(dut.clk, 200000)
 
   #assert dut.uo_out.value == 50
-  cycles 0
+  cycles = 0
   while True:
     await ClockCycles(dut.clk,1)
     if dut.uo_out[0] == 1:
