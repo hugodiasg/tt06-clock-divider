@@ -12,10 +12,10 @@ This design is a clock divider. It receives a byte at its input (scale {ui_in[7:
 
 ## How to test
 
-- scale = choose a byte
-- connect clk_in to a clock signal
-- do the nrst to reset
-- observe the clock signal with the frequency divided into clk_out
+- Scale = choose a byte
+- Connect clk_in to a clock signal
+- Do the nrst to reset
+- Observe the clock signal with the frequency divided into clk_out
 
 ## External hardware
 
